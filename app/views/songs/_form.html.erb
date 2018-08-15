@@ -7,5 +7,10 @@
   <%= form.label :duration %>
   <%= form.number_field :duration %>
   <br>
+
+  <%= form.select :artist_id, artists %>
+
+  <br>
+
   <%= form.submit "Save" %>
 <% end %>

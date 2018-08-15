@@ -5,6 +5,7 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new
+    @artists = Artist.all.map { |a| [ a.name, a.id ] }
   end
 
   def create
@@ -40,6 +41,6 @@ class SongsController < ApplicationController
 
   private
   def song_params
-    params.require(:song).permit(:name, :duration)
+    params.require(:song).permit(:name, :duration, :artist_id)
   end
 end
